@@ -1,10 +1,9 @@
 package br.com.bulovask.atarefados.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -13,4 +12,7 @@ public class Projeto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private Usuario usuarioDono;
+    @OneToMany(mappedBy = "projeto")
+    private List<Colaborador> colaboradores;
 }

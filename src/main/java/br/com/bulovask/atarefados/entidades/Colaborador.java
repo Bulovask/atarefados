@@ -5,16 +5,14 @@ import lombok.Data;
 
 @Entity
 @Data
-public class CategoriaTarefa {
+public class Colaborador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
-
+    @JoinColumn(name = "projeto_id")
+    private Projeto projeto;
     @ManyToOne
-    @JoinColumn(name = "tarefa_id")
-    private Tarefa tarefa;
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 }
