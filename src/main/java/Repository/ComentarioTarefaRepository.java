@@ -1,4 +1,4 @@
 package Repository;
 
-public class ComentarioTarefaRepository {
+public interface ComentarioTarefaRepository {
 }

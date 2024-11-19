@@ -1,4 +1,4 @@
 package Repository;
 
-public class ListaRepository {
+public interface ListaRepository {
 }

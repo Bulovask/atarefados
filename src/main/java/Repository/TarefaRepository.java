@@ -1,4 +1,4 @@
 package Repository;
 
-public class TarefaRepository {
+public interface TarefaRepository {
 }

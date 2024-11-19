@@ -1,4 +1,4 @@
 package Repository;
 
-public class AnexoRepository {
+public interface AnexoRepository {
 }

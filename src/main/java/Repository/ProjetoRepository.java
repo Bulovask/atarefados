@@ -1,4 +1,4 @@
 package Repository;
 
-public class ProjetoRepository {
+public interface ProjetoRepository {
 }

@@ -1,4 +1,4 @@
 package Repository;
 
-public class UsuarioRepository {
+public interface UsuarioRepository {
 }

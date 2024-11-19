@@ -1,4 +1,4 @@
 package Repository;
 
-public class CategoriaTarefaRepository {
+public interface CategoriaTarefaRepository {
 }
