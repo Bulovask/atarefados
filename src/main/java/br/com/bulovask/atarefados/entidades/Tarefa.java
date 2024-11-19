@@ -14,4 +14,5 @@ public class Tarefa {
     private Long id;
     private String nome;
     private String email;
+    private String descricao;
 }
