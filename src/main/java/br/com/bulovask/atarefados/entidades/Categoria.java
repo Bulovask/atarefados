@@ -11,6 +11,5 @@ public class Categoria {
     private Long id;
     private String nome;
 
-    @ManyToOne
-    private Categoria categoria;
+
 }
