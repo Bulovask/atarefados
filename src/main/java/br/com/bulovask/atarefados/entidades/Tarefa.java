@@ -1,10 +1,9 @@
 package br.com.bulovask.atarefados.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
 
 @Entity
 @Data
@@ -13,6 +12,10 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String email;
     private String descricao;
+
+    @ManyToOne
+    private Lista lista;
+    @OneToMany
+    private ArrayList<CategoriaTarefa> categorias;
 }
