@@ -12,6 +12,7 @@ public class usuarioProjeto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private
     private String nome;
     private String email;
 }
