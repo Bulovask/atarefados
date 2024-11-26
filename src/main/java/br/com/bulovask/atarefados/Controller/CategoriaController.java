@@ -1,6 +1,6 @@
-package Controller;
+package br.com.bulovask.atarefados.Controller;
 
-import Service.CategoriaService;
+import br.com.bulovask.atarefados.Service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CategoriaController {

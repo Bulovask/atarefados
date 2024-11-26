@@ -1,7 +1,6 @@
-package Controller;
+package br.com.bulovask.atarefados.Controller;
 
-import Service.ComentarioTarefaService;
-import br.com.bulovask.atarefados.entidades.ComentarioTarefa;
+import br.com.bulovask.atarefados.Service.ComentarioTarefaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ComentarioTarefaController {
