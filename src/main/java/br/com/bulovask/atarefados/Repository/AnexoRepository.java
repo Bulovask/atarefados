@@ -1,4 +1,8 @@
 package br.com.bulovask.atarefados.Repository;
+import br.com.bulovask.atarefados.entidades.Anexo;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface AnexoRepository {
+@Repository
+public interface AnexoRepository extends CrudRepository<Anexo, Long> {
 }
