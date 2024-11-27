@@ -3,7 +3,7 @@ package br.com.bulovask.atarefados.entidades;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,5 +15,5 @@ public class Usuario {
     private String email;
 
     @OneToMany
-    private ArrayList<UsuarioProjeto> projetos;
+    private List<UsuarioProjeto> projetos;
 }

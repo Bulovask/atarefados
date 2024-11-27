@@ -3,7 +3,7 @@ package br.com.bulovask.atarefados.entidades;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -13,6 +13,6 @@ public class Categoria {
     private Long id;
     private String nome;
 
-    @ManyToOne
-    private ArrayList<CategoriaTarefa> tarefas;
+    @OneToMany
+    private List<CategoriaTarefa> tarefas;
 }

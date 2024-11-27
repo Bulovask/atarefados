@@ -3,8 +3,7 @@ package br.com.bulovask.atarefados.entidades;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,8 +15,8 @@ public class Projeto {
     private Usuario usuarioDono;
 
     @OneToMany
-    private ArrayList<Lista> listas;
+    private List<Lista> listas;
 
     @OneToMany
-    private ArrayList<UsuarioProjeto> colaboradores;
+    private List<UsuarioProjeto> colaboradores;
 }
