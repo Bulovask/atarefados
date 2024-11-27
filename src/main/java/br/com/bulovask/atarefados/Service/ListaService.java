@@ -37,4 +37,4 @@ public class ListaService {
         listaRepository.deleteById(id);
         return new ResponseEntity("{\"mensagem\":\"Removido com sucesso\"}", HttpStatus.OK);
     }
-}
+} 
