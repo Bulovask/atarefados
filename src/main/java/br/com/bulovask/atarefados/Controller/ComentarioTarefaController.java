@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class ComentarioTarefaController {
 
     @Autowired
-    private ComentarioTarefaService comentarioService;
+    private ComentarioTarefaService comentarioTarefaService;
 
     @PostMapping("/comentarioTarefa")
     public ComentarioTarefa salvar(@RequestBody ComentarioTarefa comentarioTarefa){
@@ -37,6 +37,6 @@ public class ComentarioTarefaController {
     @PutMapping("/comentarioTarefa/{id}")
     public ComentarioTarefa atualizar(@PathVariable Long id, @RequestBody ComentarioTarefa comentarioTarefa){
         comentarioTarefa.setId(id);
-        return comentarioTarefaService.salvar(ComentarioTarefa).getBody();
+        return comentarioTarefaService.salvar(comentarioTarefa).getBody();
     }
 }
