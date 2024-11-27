@@ -3,38 +3,28 @@ package br.com.bulovask.atarefados.Service;
 import br.com.bulovask.atarefados.Repository.ListaRepository;
 import br.com.bulovask.atarefados.entidades.Lista;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ListaService {
-
     @Autowired
     private ListaRepository listaRepository;
 
-    public List<Lista> listarTodos() {
-        return (List<Lista>) listaRepository.findAll();
+    public ResponseEntity<Lista> salvar (Lista lista){
+        return new ResponseEntity<Lista>(listaRepository.save(lista), HttpStatus.OK);
     }
 
-    public Optional<Lista> buscarPorId(Long id) {
-        return listaRepository.findById(id);
+    public Iterable<Lista> listarTodos (){
+        return listaRepository.findAll();
     }
-
-    public Lista salvar(Lista lista) {
-        return listaRepository.save(lista);
-    }
-
-    public Lista atualizar(Long id, Lista listaAtualizada) {
-        Optional<Lista> listaExistente = listaRepository.findById(id);
-        if (listaExistente.isPresent()) {
-            Lista lista = listaExistente.get();
-            lista.setUsuario(listaAtualizada.getUsuario());
-            lista.setProjeto(listaAtualizada.getProjeto());
-            return listaRepository.save(lista);
-        } else {
-            throw new RuntimeException("Item da Lista não encontrado com o ID: " + id);
-        }
+    public ResponseEntity<Lista> buscarPorId(Long id) {
+        return new ResponseEntity<Lista>(listaRepository.findById(id).orElseThrow(),HttpStatus.OK);
     }
 
     public ResponseEntity deletar(Long id) {
         listaRepository.deleteById(id);
-        return new ResponseEntity("{\"mensagem\":\"Removido com sucesso\"}", HttpStatus.OK);
+        return new ResponseEntity("{\"mensagem\":\"Removido com sucesso\"}",HttpStatus.OK);
     }
-} 
+}

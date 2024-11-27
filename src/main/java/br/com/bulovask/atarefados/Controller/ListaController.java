@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 public class ListaController {
 
@@ -16,7 +14,7 @@ public class ListaController {
 
     @PostMapping("/lista")
     public Lista salvar(@RequestBody Lista lista){
-        return listaService.salvar(lista);
+        return listaService.salvar(lista).getBody();
     }
 
     @GetMapping("/lista")
@@ -25,7 +23,7 @@ public class ListaController {
     }
 
     @GetMapping("/lista/{id}")
-    public Optional<Lista> buscarPorId(@PathVariable Long id){
+    public ResponseEntity<Lista> buscarPorId(@PathVariable Long id){
         return listaService.buscarPorId(id);
     }
 
@@ -37,6 +35,6 @@ public class ListaController {
     @PutMapping("/lista/{id}")
     public Lista atualizar(@PathVariable Long id, @RequestBody Lista lista){
         lista.setId(id);
-        return listaService.salvar(lista);
+        return listaService.salvar(lista).getBody();
     }
 }
