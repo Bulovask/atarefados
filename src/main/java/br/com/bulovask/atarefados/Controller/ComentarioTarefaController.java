@@ -20,12 +20,12 @@ public class ComentarioTarefaController {
     }
 
     @GetMapping("/comentarioTarefa")
-    public Iterable<Lista> listarTodos (){
+    public Iterable<ComentarioTarefa> listarTodos (){
         return comentarioTarefaService.listarTodos();
     }
 
     @GetMapping("/comentarioTarefa/{id}")
-    public ResponseEntity<Lista> buscarPorId(@PathVariable Long id){
+    public ResponseEntity<ComentarioTarefa> buscarPorId(@PathVariable Long id){
         return comentarioTarefaService.buscarPorId(id);
     }
 
@@ -35,8 +35,8 @@ public class ComentarioTarefaController {
     }
 
     @PutMapping("/comentarioTarefa/{id}")
-    public ComentarioTarefa atualizar(@PathVariable Long id, @RequestBody Lista lista){
+    public ComentarioTarefa atualizar(@PathVariable Long id, @RequestBody ComentarioTarefa comentarioTarefa){
         comentarioTarefa.setId(id);
-        return comentarioTarefaService.salvar(lista).getBody();
+        return comentarioTarefaService.salvar(ComentarioTarefa).getBody();
     }
 }
