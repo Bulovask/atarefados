@@ -34,7 +34,7 @@ public class TarefaController {
 
     @PutMapping("/Tarefa/{id}")
     public Tarefa atualizar(@PathVariable Long id, @RequestBody Tarefa tarefa){
-        comentarioTarefa.setId(id);
+        tarefa.setId(id);
         return tarefaService.salvar(tarefa).getBody();
     }
 }
