@@ -28,7 +28,7 @@ public class ListaController {
     }
 
     @DeleteMapping("/lista/{id}")
-    public ResponseEntity<Lista> deletar(@PathVariable Long id){
+    public ResponseEntity deletar(@PathVariable Long id){
         return listaService.deletar(id);
     }
 
