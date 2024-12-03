@@ -1,7 +1,7 @@
 package br.com.bulovask.atarefados.Controller;
 
-import br.com.bulovask.atarefados.Service.CategoriaService;
-import br.com.bulovask.atarefados.entidades.Categoria;
+import br.com.bulovask.atarefados.Service.CategoriaTarefaService;
+import br.com.bulovask.atarefados.entidades.CategoriaTarefa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +18,12 @@ public class CategoriaTarefaController {
     }
 
     @GetMapping("/CategoriaTarefa")
-    public Iterable<Categoria> listarTodos (){
+    public Iterable<CategoriaTarefa> listarTodos (){
         return categoriaTarefaService.listarTodos();
     }
 
     @GetMapping("/CategoriaTarefa/{id}")
-    public ResponseEntity<Categoria> buscarPorId(@PathVariable Long id){
+    public ResponseEntity<CategoriaTarefa> buscarPorId(@PathVariable Long id){
         return categoriaTarefaService.buscarPorId(id);
     }
 
@@ -34,7 +34,7 @@ public class CategoriaTarefaController {
 
     @PutMapping("/CategoriaTarefa/{id}")
     public CategoriaTarefa atualizar(@PathVariable Long id, @RequestBody CategoriaTarefa categoriaTarefa){
-        categoria.setId(id);
+        categoriaTarefa.setId(id);
         return categoriaTarefaService.salvar(categoriaTarefa).getBody();
     }
 }
