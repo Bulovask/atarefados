@@ -28,7 +28,7 @@ public class CategoriaTarefaController {
     }
 
     @DeleteMapping("/CategoriaTarefa/{id}")
-    public ResponseEntity deletar(@PathVariable Long id){
+    public ResponseEntity<CategoriaTarefa> deletar(@PathVariable Long id){
         return categoriaTarefaService.deletar(id);
     }
 

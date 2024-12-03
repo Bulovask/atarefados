@@ -30,7 +30,7 @@ public class TarefaController {
     }
 
     @DeleteMapping("/Tarefa/{id}")
-    public ResponseEntity deletar(@PathVariable Long id){
+    public ResponseEntity<Tarefa> deletar(@PathVariable Long id){
         return tarefaService.deletar(id);
     }
 

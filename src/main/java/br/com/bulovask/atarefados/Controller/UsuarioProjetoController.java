@@ -33,4 +33,8 @@ public class UsuarioProjetoController {
     public ResponseEntity<UsuarioProjeto> salvar(@RequestBody UsuarioProjeto usuarioProjeto) {
         return usuarioProjetoService.salvar(usuarioProjeto);
     }
+    @DeleteMapping("/usuarioProjeto/{id}")
+    public ResponseEntity<UsuarioProjeto> deletar(@PathVariable Long id){
+        return usuarioProjetoService.deletar(id);
+    }
 }
