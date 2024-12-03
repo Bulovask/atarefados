@@ -16,7 +16,7 @@ public class ComentarioTarefaController {
 
     @PostMapping("/comentario-tarefa")
     public ComentarioTarefa salvar(@RequestBody ComentarioTarefa comentarioTarefa){
-        return ComentarioTarefaService.salvar(comentarioTarefa).getBody();
+        return comentarioTarefaService.salvar(comentarioTarefa).getBody();
     }
 
     @GetMapping("/comentario-tarefa")
