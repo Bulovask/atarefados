@@ -4,6 +4,7 @@ import br.com.bulovask.atarefados.Service.ComentarioTarefaService;
 import br.com.bulovask.atarefados.Service.ListaService;
 import br.com.bulovask.atarefados.entidades.ComentarioTarefa;
 import br.com.bulovask.atarefados.entidades.Lista;
+import br.com.bulovask.atarefados.entidades.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,8 @@ public class ComentarioTarefaController {
     private ComentarioTarefaService comentarioTarefaService;
 
     @PostMapping("/comentarioTarefa")
-    public ComentarioTarefa salvar(@RequestBody ComentarioTarefa comentarioTarefa){
-        return ComentarioTarefaService.salvar(comentarioTarefa).getBody();
+    public ResponseEntity<ComentarioTarefa> salvar(@RequestBody ComentarioTarefa comentarioTarefa){
+        return comentarioTarefaService.salvar(comentarioTarefa);
     }
 
     @GetMapping("/comentarioTarefa")
