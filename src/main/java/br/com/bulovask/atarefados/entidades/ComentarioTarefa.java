@@ -12,6 +12,7 @@ public class ComentarioTarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String mensagem;
+    @ManyToOne
     private Usuario autor;
     private LocalDate datahora;
 

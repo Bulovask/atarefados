@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ComentarioTarefaService {
     @Autowired
-    private ComentarioTarefaRepository comentarioTarefaRepository;
+    private static ComentarioTarefaRepository comentarioTarefaRepository;
 
-    public ResponseEntity<ComentarioTarefa> salvar (ComentarioTarefa comentarioTarefa){
+    public static ResponseEntity<ComentarioTarefa> salvar(ComentarioTarefa comentarioTarefa){
         return new ResponseEntity<ComentarioTarefa>(comentarioTarefaRepository.save(comentarioTarefa), HttpStatus.OK);
     }
 
