@@ -1,12 +1,12 @@
 package br.com.bulovask.atarefados.Controller;
 
 import br.com.bulovask.atarefados.Service.ProjetoService;
-import br.com.bulovask.atarefados.entidades.Lista;
 import br.com.bulovask.atarefados.entidades.Projeto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
 public class ProjetoController {
 
     @Autowired
