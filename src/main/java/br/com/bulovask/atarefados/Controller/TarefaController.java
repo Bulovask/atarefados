@@ -3,6 +3,7 @@ package br.com.bulovask.atarefados.Controller;
 import br.com.bulovask.atarefados.Service.ComentarioTarefaService;
 import br.com.bulovask.atarefados.Service.TarefaService;
 import br.com.bulovask.atarefados.entidades.ComentarioTarefa;
+import br.com.bulovask.atarefados.entidades.Lista;
 import br.com.bulovask.atarefados.entidades.Tarefa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,24 +15,30 @@ public class TarefaController {
     @Autowired
     private TarefaService tarefaService;
 
-    @PostMapping("/Tarefa")
+    @PostMapping("/tarefa")
     public Tarefa salvar(@RequestBody Tarefa tarefa){
         return tarefaService.salvar(tarefa).getBody();
     }
 
-    @GetMapping("/Tarefa")
+    @GetMapping("/tarefa")
     public Iterable<Tarefa> listarTodos (){
         return tarefaService.listarTodos();
     }
 
-    @GetMapping("/Tarefa/{id}")
+    @GetMapping("/tarefa/{id}")
     public ResponseEntity<Tarefa> buscarPorId(@PathVariable Long id){
         return tarefaService.buscarPorId(id);
     }
 
-    @DeleteMapping("/Tarefa/{id}")
+    @DeleteMapping("/tarefa/{id}")
     public ResponseEntity deletar(@PathVariable Long id){
         return tarefaService.deletar(id);
+    }
+
+    @PutMapping("/tarefa/{id}")
+    public Tarefa atualizar(@PathVariable Long id, @RequestBody Tarefa tarefa){
+        tarefa.setId(id);
+        return tarefaService.salvar(tarefa).getBody();
     }
 
 }

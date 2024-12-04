@@ -1,6 +1,7 @@
 package br.com.bulovask.atarefados.Controller;
 
 import br.com.bulovask.atarefados.Service.UsuarioProjetoService;
+import br.com.bulovask.atarefados.entidades.Lista;
 import br.com.bulovask.atarefados.entidades.UsuarioProjeto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,5 +34,11 @@ public class UsuarioProjetoController {
     @DeleteMapping("/usuarioProjeto/{id}")
     public ResponseEntity deletar(@PathVariable Long id){
         return usuarioProjetoService.deletar(id);
+    }
+
+    @PutMapping("/usuarioProjeto/{id}")
+    public UsuarioProjeto atualizar(@PathVariable Long id, @RequestBody UsuarioProjeto usuarioProjeto){
+        usuarioProjeto.setId(id);
+        return usuarioProjetoService.salvar(usuarioProjeto).getBody();
     }
 }
