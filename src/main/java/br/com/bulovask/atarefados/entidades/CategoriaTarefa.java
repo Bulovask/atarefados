@@ -1,6 +1,7 @@
 package br.com.bulovask.atarefados.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
@@ -11,7 +12,9 @@ public class CategoriaTarefa {
     private Long id;
 
     @ManyToOne
+    @NotNull
     private Categoria categoria;
     @ManyToOne
+    @NotNull
     private Tarefa tarefa;
 }

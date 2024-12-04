@@ -1,6 +1,7 @@
 package br.com.bulovask.atarefados.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
@@ -10,7 +11,9 @@ public class UsuarioProjeto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
+    @NotNull
     private Usuario usuario;
     @ManyToOne
+    @NotNull
     private Projeto projeto;
 }
