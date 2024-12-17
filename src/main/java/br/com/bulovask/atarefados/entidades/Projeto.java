@@ -14,13 +14,15 @@ public class Projeto {
     private Long id;
     @NotNull
     private String nome;
+
     @ManyToOne
     @NotNull
+
     private Usuario usuarioDono;
 
-    @OneToMany
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "projeto")
     private List<Lista> listas;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "projeto")
     private List<UsuarioProjeto> colaboradores;
 }

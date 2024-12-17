@@ -19,6 +19,6 @@ public class Tarefa {
     @ManyToOne
     @NotNull
     private Lista lista;
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tarefa")
     private List<CategoriaTarefa> categorias;
 }

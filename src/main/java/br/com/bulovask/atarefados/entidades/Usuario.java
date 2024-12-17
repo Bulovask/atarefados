@@ -17,7 +17,7 @@ public class Usuario {
     @NotNull
     private String email;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
     private List<UsuarioProjeto> projetos;
 
     public void setId(Long id) {
