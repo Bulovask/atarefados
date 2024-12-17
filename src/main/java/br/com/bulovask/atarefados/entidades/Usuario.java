@@ -19,4 +19,7 @@ public class Usuario {
 
     @OneToMany
     private List<UsuarioProjeto> projetos;
+
+    public void setId(Long id) {
+    }
 }

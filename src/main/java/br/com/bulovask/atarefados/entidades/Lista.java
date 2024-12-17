@@ -15,4 +15,7 @@ public class Lista {
     @ManyToOne
     @NotNull
     private Projeto projeto;
+
+    public void setId(Long id) {
+    }
 }

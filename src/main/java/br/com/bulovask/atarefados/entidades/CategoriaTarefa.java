@@ -17,4 +17,8 @@ public class CategoriaTarefa {
     @ManyToOne
     @NotNull
     private Tarefa tarefa;
+
+    public void setId(Long id) {
+        
+    }
 }

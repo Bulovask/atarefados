@@ -17,4 +17,7 @@ public class Categoria {
 
     @OneToMany
     private List<CategoriaTarefa> tarefas;
+
+    public void setId(Long id) {
+    }
 }

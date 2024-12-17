@@ -16,4 +16,7 @@ public class UsuarioProjeto {
     @ManyToOne
     @NotNull
     private Projeto projeto;
+
+    public void setId(Long id) {
+    }
 }
