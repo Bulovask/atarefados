@@ -5,7 +5,7 @@
   - Categoria 1
   - CategoriaTarefa 
   - ComentarioTarefa
-  - Lista
+  - Lista 1
   - Projeto 1
   - Tarefa 
   - Usuario 1
