@@ -1,9 +1,9 @@
 package br.com.bulovask.atarefados.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -12,27 +12,13 @@ public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
+    @NotNull
+    private String nome;
     private String descricao;
-    private LocalDate prazo;
-    private LocalDate criadoEm;
-
-    @OneToMany(mappedBy = "tarefaPai")
-    private List<Anexo> anexos;
 
     @ManyToOne
-    @JoinColumn(name = "lista_pai_id")
-    private Lista listaPai;
-
-    @ManyToOne
-    @JoinColumn(name = "tarefa_pai_id")
-    private Tarefa tarefaPai;
-
-    @OneToMany(mappedBy = "tarefa")
+    @NotNull
+    private Lista lista;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tarefa")
     private List<CategoriaTarefa> categorias;
-
-    @OneToMany(mappedBy = "tarefa")
-    private List<ComentarioTarefa> comentarios;
-
-    private Boolean statusConclusao;
 }

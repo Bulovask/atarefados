@@ -1,0 +1,41 @@
+# Testes
+## Rotas
+- GET
+  - Anexo 1
+  - Categoria 1
+  - CategoriaTarefa 
+  - ComentarioTarefa
+  - Lista 1
+  - Projeto 1
+  - Tarefa 
+  - Usuario 1
+  - UsuarioProjeto
+- Post
+    - Anexo 1
+    - Categoria 1
+    - CategoriaTarefa
+    - ComentarioTarefa
+    - Lista
+    - Projeto
+    - Tarefa
+    - Usuario 1
+    - UsuarioProjeto
+- Put
+    - Categoria 
+    - CategoriaTarefa
+    - ComentarioTarefa
+    - Lista
+    - Projeto
+    - Tarefa
+    - Usuario
+    - UsuarioProjeto
+- Delete
+    - Anexo 1
+    - Categoria 1
+    - CategoriaTarefa
+    - ComentarioTarefa
+    - Lista
+    - Projeto 1
+    - Tarefa
+    - Usuario
+    - UsuarioProjeto
