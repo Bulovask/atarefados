@@ -1,10 +1,7 @@
 package br.com.bulovask.atarefados.Controller;
 
-import br.com.bulovask.atarefados.Service.ComentarioTarefaService;
 import br.com.bulovask.atarefados.Service.TarefaService;
-import br.com.bulovask.atarefados.entidades.ComentarioTarefa;
-import br.com.bulovask.atarefados.entidades.Lista;
-import br.com.bulovask.atarefados.entidades.Tarefa;
+import br.com.bulovask.atarefados.Entity.Tarefa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

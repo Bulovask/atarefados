@@ -1,9 +1,7 @@
 package br.com.bulovask.atarefados.Service;
 
 import br.com.bulovask.atarefados.Repository.CategoriaTarefaRepository;
-import br.com.bulovask.atarefados.Repository.UsuarioRepository;
-import br.com.bulovask.atarefados.entidades.CategoriaTarefa;
-import br.com.bulovask.atarefados.entidades.Usuario;
+import br.com.bulovask.atarefados.Entity.CategoriaTarefa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

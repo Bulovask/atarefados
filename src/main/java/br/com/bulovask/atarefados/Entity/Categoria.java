@@ -1,11 +1,8 @@
-package br.com.bulovask.atarefados.entidades;
+package br.com.bulovask.atarefados.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import org.hibernate.validator.constraints.UniqueElements;
-
-import java.util.List;
 
 import java.util.List;
 
@@ -20,7 +17,4 @@ public class Categoria {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
     private List<CategoriaTarefa> tarefas;
-
-    public void setId(Long id) {
-    }
 }

@@ -1,21 +1,18 @@
-package br.com.bulovask.atarefados.entidades;
+package br.com.bulovask.atarefados.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import java.io.File;
-
 @Entity
 @Data
-public class Anexo {
+public class Lista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotNull
+    private String nome;
     @ManyToOne
-    @JoinColumn(name = "tarefa_id")
-    private Tarefa tarefa;
-
-    private String urlArquivo;
+    @NotNull
+    private Projeto projeto;
 }

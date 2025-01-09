@@ -1,4 +1,4 @@
-package br.com.bulovask.atarefados.entidades;
+package br.com.bulovask.atarefados.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

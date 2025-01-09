@@ -1,8 +1,7 @@
 package br.com.bulovask.atarefados.Controller;
 
 import br.com.bulovask.atarefados.Service.UsuarioProjetoService;
-import br.com.bulovask.atarefados.entidades.Lista;
-import br.com.bulovask.atarefados.entidades.UsuarioProjeto;
+import br.com.bulovask.atarefados.Entity.UsuarioProjeto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

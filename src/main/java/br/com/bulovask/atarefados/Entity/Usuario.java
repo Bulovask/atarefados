@@ -1,7 +1,6 @@
-package br.com.bulovask.atarefados.entidades;
+package br.com.bulovask.atarefados.Entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.List;
@@ -12,14 +11,19 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+
     private String nome;
-    @NotNull
+
+    @Column(unique = true)
     private String email;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
-    private List<UsuarioProjeto> projetos;
+    @Transient
+    private String senha;
+    private String hashsenha;
 
-    public void setId(Long id) {
-    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario")
+    private List<UsuarioProjeto> outrosProjetos;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuarioDono")
+    private List<Projeto> meusProjetos;
 }
